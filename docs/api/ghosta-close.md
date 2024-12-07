@@ -17,10 +17,10 @@ To close alert by id or all alerts
 ## Usage
 
 ```tsx
-// If you don't pass any id, all alerts will close
+If you don't pass any id, all alerts will close
 ghosta.close();
 
-// Close alert that has a given id
+Close alert that has a given id
 const id = ghosta.fire({ title: "Alert title" });
 ghosta.close(id);
 ```

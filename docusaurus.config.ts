@@ -2,6 +2,8 @@ import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
+// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
 const config: Config = {
   title: "React Ghosta",
   tagline:
@@ -9,7 +11,7 @@ const config: Config = {
   favicon: "img/favicon.svg",
 
   // Set the production url of your site here
-  url: "https://react-ghosta.vercel.app",
+  url: "https://react-ghosta.vercel.app/",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -36,14 +38,23 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/eleviven/react-ghosta-website/tree/main/",
         },
-
+        blog: {
+          showReadingTime: true,
+          feedOptions: {
+            type: ["rss", "atom"],
+            xslt: true,
+          },
+          // Useful options to enforce blogging best practices
+          onInlineTags: "warn",
+          onInlineAuthors: "warn",
+          onUntruncatedBlogPosts: "warn",
+        },
         theme: {
-          customCss: ["./src/assets/css/global.css"],
+          customCss: [
+            "./src/css/custom.css",
+            "./node_modules/react-ghosta/dist/ghosta.css",
+          ],
         },
       } satisfies Preset.Options,
     ],
@@ -51,22 +62,23 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: "img/docusaurus-social-card.jpg",
+    image: "img/social-banner.png",
     navbar: {
       title: "React Ghosta",
       logo: {
-        alt: "React Ghosta",
+        alt: "Logo",
         src: "img/logo-dark.svg",
         srcDark: "img/logo.svg",
       },
       items: [
         {
-          label: "Documentation",
-          href: "/docs/getting-started/introduction",
+          type: "docSidebar",
+          sidebarId: "documentationSidebar",
           position: "left",
+          label: "Documentation",
         },
         {
-          href: "https://github.com/eleviven/react-ghosta",
+          href: "https://github.com/firuzcanh/react-ghosta",
           label: "GitHub",
           position: "right",
         },
@@ -102,8 +114,7 @@ const config: Config = {
     },
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.vsDark,
-      additionalLanguages: ["json"],
+      darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
 

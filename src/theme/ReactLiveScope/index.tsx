@@ -13,7 +13,7 @@ const Button = ({ showGradientBorder, ...props }) => {
 };
 
 // Add react-live imports you need here
-const ReactLiveScope = {
+const ReactLiveScope: unknown = {
   React,
   ...React,
   ...ReactGhosta,

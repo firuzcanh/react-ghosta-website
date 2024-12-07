@@ -26,6 +26,7 @@ npm install react-ghosta
 
 ## Usage
 
+
 Add the Ghosta and ghosta.css to your app first. It will take care of rendering all alerts emitted. Now you can trigger `ghosta.fire()` from anywhere!
 
 ```jsx live
