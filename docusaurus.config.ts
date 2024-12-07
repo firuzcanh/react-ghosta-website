@@ -51,10 +51,7 @@ const config: Config = {
           onUntruncatedBlogPosts: "warn",
         },
         theme: {
-          customCss: [
-            "./src/css/custom.css",
-            "./node_modules/react-ghosta/dist/ghosta.css",
-          ],
+          customCss: ["./src/css/custom.css"],
         },
       } satisfies Preset.Options,
     ],
