@@ -48,3 +48,75 @@
 .button--primary {
   color: var(--ifm-color-white);
 }
+
+/* Ghosta */
+/********** Keyframes **********/
+@keyframes ghostaZoomIn {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ghostaZoomOut {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes ghostaZoomInHalf {
+  0% {
+    transform: scale(0.5) translateX(-50%) translateY(-50%);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.1) translateX(-50%) translateY(-50%);
+  }
+  100% {
+    transform: scale(1) translateX(-50%) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes ghostaZoomOutHalf {
+  0% {
+    transform: scale(1) translateX(-50%) translateY(-50%);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1.1) translateX(-50%) translateY(-50%);
+  }
+  100% {
+    transform: scale(0.5) translateX(-50%) translateY(-50%);
+    opacity: 0;
+  }
+}
+
+@keyframes ghostaFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ghostaFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
